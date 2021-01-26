@@ -15,7 +15,7 @@ Then activate it with
 conda activate djangoenv
 ```
 
-Install the requirements in the nevironment via
+Install the requirements in the environment via
 ```
 pip install -r requirements.txt
 ```

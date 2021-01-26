@@ -1,0 +1,23 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  django:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/django
+      - logvolume01:/var/log
+    links:
+      - redis
+    environment:
+      SECRET_KEY:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+volumes:
+  logvolume01: {}
